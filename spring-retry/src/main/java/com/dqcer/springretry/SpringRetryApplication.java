@@ -29,8 +29,12 @@ public class SpringRetryApplication {
                 "----------------------------------------------------------");
     }
 
-    @Autowired
     UserService userService;
+
+    @Autowired
+    void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/testRetry")
     public String testRetry() throws Exception {
